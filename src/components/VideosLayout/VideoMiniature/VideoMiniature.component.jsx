@@ -28,11 +28,11 @@ export const VideoMiniature = ( { video } ) => {
           title={video.snippet.title}
         />
         <CardContent>
-        <Tooltip title={ video.snippet.title }>
-          <Typography noWrap gutterBottom component="h4">
-            { video.snippet.title }
-          </Typography>
-        </Tooltip>
+          <Tooltip title={ video.snippet.title }>
+            <Typography noWrap gutterBottom component="h4">
+              { video.snippet.title }
+            </Typography>
+          </Tooltip>
           <Typography variant="body2" color="textSecondary" component="p">
             { video.snippet.channelTitle }
           </Typography>

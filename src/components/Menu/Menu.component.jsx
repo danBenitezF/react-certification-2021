@@ -19,12 +19,12 @@ export const Menu = ({ isOpen, setIsOpen }) => {
             >
                 <List>
                     {listMenu.map((menu, index) => (
-                    <ListItem button key={menu.menu}>
-                        <ListItemIcon>
-                            <Icon>{menu.icon}</Icon>
-                        </ListItemIcon>
-                        <ListItemText primary={menu.menu} />
-                    </ListItem>
+                        <ListItem button key={menu.menu}>
+                            <ListItemIcon>
+                                <Icon>{menu.icon}</Icon>
+                            </ListItemIcon>
+                            <ListItemText primary={menu.menu} />
+                        </ListItem>
                     ))}
                 </List>
                 <Divider />

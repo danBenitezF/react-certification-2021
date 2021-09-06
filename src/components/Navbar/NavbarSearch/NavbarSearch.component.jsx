@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { navStyles } from './NavbarSearch.style';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
