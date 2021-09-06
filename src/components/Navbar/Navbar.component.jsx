@@ -1,9 +1,11 @@
 import React from 'react'
 
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import {
+    AppBar,
+    Toolbar,
+    Typography,
+    IconButton,
+} from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 import { Menu } from '../Menu/Menu.component';
@@ -15,26 +17,27 @@ import { SectionMobile } from './SectionMobile/SectionMobile.component';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const classes = useStyles();
+    const { menuButton, grow, title } = useStyles();
+
     return (
-        <div className={classes.grow}>
+        <div className={grow}>
         <AppBar position="static">
             <Toolbar>
                 <IconButton
                      edge="start" 
-                     className={classes.menuButton} 
+                     className={menuButton} 
                      color="inherit" 
                      aria-label="menu"
                      onClick={ () => setIsOpen(!isOpen) }
                 >
                     <MenuIcon/>
                 </IconButton>
-                <Typography variant="h6" className={classes.title}>
+                <Typography variant="h6" className={title}>
                     YoutubePerron
                 </Typography>
-                <div className={classes.grow} />
+                <div className={grow} />
                 <NavbarSearch/>
-                <div className={classes.grow} />
+                <div className={grow} />
                 <SectionDesktop/>
                 <SectionMobile/>
             </Toolbar>

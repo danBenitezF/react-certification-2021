@@ -19,7 +19,6 @@ describe('Navabar', () => {
     });
     
     test(`should contain an 'NavbarSearch', 'SectionDesktop' and 'SectionMobile` , () => {
-        const wrapper = shallow(<Navbar/>);
         const navbarSearch = shallow(<NavbarSearch/>);
         const sectionDesktop = shallow(<SectionDesktop/>);
         const sectionMobile = shallow(<SectionMobile/>);

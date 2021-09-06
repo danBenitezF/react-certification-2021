@@ -8,4 +8,11 @@ describe('Menu', () => {
         const wrapper = shallow(<Menu isOpen={false} setIsOpen={setIsOpen} /> );
         expect(wrapper).toMatchSnapshot();
     });
+
+    test('setIsOpen should be called at least once ', () => {
+        let isOpen = false;
+        const setIsOpen = jest.fn();
+        const wrapper = shallow(<Menu isOpen={isOpen} setIsOpen={setIsOpen} /> );
+    })
+    
 });

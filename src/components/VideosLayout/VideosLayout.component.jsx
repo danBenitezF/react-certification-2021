@@ -2,15 +2,15 @@ import React from 'react';
 import { VideoMiniature } from './VideoMiniature/VideoMiniature.component';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { useFetch } from '../../utils/hooks/useFetch';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   }
 }));
-export const VideosLayout = () => {
+export const VideosLayout = ({videos}) => {
     const classes = useStyles();
-    const videos = useFetch();
+    
     return (
         <div className={classes.root}>
           <Grid 

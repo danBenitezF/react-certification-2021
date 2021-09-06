@@ -9,11 +9,5 @@ export const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
           display: 'block',
         },
-    },
-    sectionMobile: {
-        display: 'flex',
-        [theme.breakpoints.up('md')]: {
-            display: 'none',
-        },
     }
 }));
