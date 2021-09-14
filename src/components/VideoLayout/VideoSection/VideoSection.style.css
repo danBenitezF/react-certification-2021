@@ -1,0 +1,45 @@
+.video-info {
+    padding-top: 1vh
+}
+
+.subtitle { 
+    color: #606060;
+    margin-top: 1vh;
+}
+
+.description {
+    color: #030303;
+    font-size: 14px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    overflow:hidden;
+    line-height: 2rem;
+    max-height: 8rem;
+    -webkit-box-orient: vertical;
+    display: block;
+    display: -webkit-box;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    margin-bottom: 1vh;
+    text-align: left;
+    max-width: 65%;
+}
+
+.full-description {
+    color: #030303;
+    font-size: 14px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    line-height: 2rem;
+    display: block;
+    display: -webkit-box;
+    text-align: left;
+    max-width: 65%;
+}
+
+h1 { 
+    font-size: 18px;
+    line-height: 2.6rem;
+    word-break: break-word;
+}
