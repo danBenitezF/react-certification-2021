@@ -43,6 +43,31 @@ const Navbar = () => {
             </Toolbar>
         </AppBar>
         <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className={ parent }>
+            <AppBar position="static" color="default">
+                <Toolbar>
+                    <IconButton
+                        edge="start" 
+                        className={menuButton} 
+                        color="inherit" 
+                        aria-label="menu"
+                        onClick={ () => setIsOpen(!isOpen) }
+                    >
+                        <MenuIcon/>
+                    </IconButton>
+                    <Link to={`/`}>
+                        <Typography variant="h6" className={title} color="primary">
+                            YoutubePerron
+                        </Typography>
+                    </Link>
+                    <div className={grow} />
+                    <NavbarSearch/>
+                    <div className={grow} />
+                    <SectionDesktop/>
+                    <SectionMobile/>
+                </Toolbar>
+            </AppBar>
+            <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     )
 };

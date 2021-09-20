@@ -21,6 +21,8 @@ export const VideosLayout = ({videos}) => {
             {
               videos.map( (video, idx) => (
                 <Grid key={`${video.key}${idx}`} item xs={12} xm={6} sm={3} xl={3}>
+              videos.map( (video, id) => (
+                <Grid key={`${video.id}${id}`} item xs={12} xm={6} sm={size} xl={size} className={classes.grid}>
                   <VideoMiniature key={video.etag} video={video} />
                 </Grid>
               ))

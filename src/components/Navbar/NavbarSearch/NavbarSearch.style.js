@@ -10,9 +10,9 @@ export const navStyles = makeStyles((theme) => ({
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: alpha(theme.palette.common.white, 0.15),
+      backgroundColor: alpha(theme.palette.type === 'dark' ? theme.palette.common.white : theme.palette.common.black, 0.15),
       '&:hover': {
-        backgroundColor: alpha(theme.palette.common.white, 0.25),
+        backgroundColor: alpha(theme.palette.type === 'dark' ? theme.palette.common.white : theme.palette.common.black, 0.25),
       },
       marginRight: theme.spacing(2),
       marginLeft: 0,
@@ -31,12 +31,8 @@ export const navStyles = makeStyles((theme) => ({
       alignItems: 'center',
       justifyContent: 'center',
     },
-    inputRoot: {
-      color: 'inherit',
-    },
     inputInput: {
       padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
       paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
       transition: theme.transitions.create('width'),
       width: '100%',
