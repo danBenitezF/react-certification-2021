@@ -1,22 +1,15 @@
 import React from 'react'
-import {Icon,  ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
+import {Icon,  Link,  ListItem, ListItemIcon, ListItemText} from '@material-ui/core';
 
 export const MenuItem = ( { menu }) => {
-    const { name, icon, route} = menu;
+    const { icon, route} = menu;
     return (
-<<<<<<< Updated upstream
-        <ListItem button key={menu.menu}>
-            <ListItemIcon>
-                <Icon>{menu.icon}</Icon>
-            </ListItemIcon>
-            <ListItemText primary={menu.menu} />
-        </ListItem>
         <Link to={`${route}`}>
-            <ListItem button key={name}>
+            <ListItem button key={menu}>
                 <ListItemIcon>
                     <Icon>{icon}</Icon>
                 </ListItemIcon>
-                <ListItemText primary={name} />
+                <ListItemText primary={menu} />
             </ListItem>
         </Link>
     )

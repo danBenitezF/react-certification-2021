@@ -1,26 +1,10 @@
-import React from 'react';
-import { navStyles } from './NavbarSearch.style';
+import React, { useContext } from 'react';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-
-export const NavbarSearch = () => {
-    const classes = navStyles();
-    return (
-        <div className={classes.search}>
-            <div className={classes.searchIcon}>
-                <SearchIcon />
-            </div>
-            <InputBase
-                placeholder="Search…"
-                classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-                }}
-                inputProps={{ 'aria-label': 'search' }}
-            />
 import { navStyles } from './NavbarSearch.style';
 import { VideosContext } from '../../../providers/Videos/Videos.provider';
 import { useHistory } from "react-router-dom";
+import { useState } from 'react';
 
 export const NavbarSearch = () => {
     const classes = navStyles();
