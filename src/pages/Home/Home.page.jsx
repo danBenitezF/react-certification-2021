@@ -1,19 +1,29 @@
-import React, { useRef } from 'react';
-// import { useHistory } from 'react-router-dom';
+import React, { useContext, useRef } from 'react';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-// import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 import { VideosLayout } from '../../components/VideosLayout/VideosLayout.component';
 import { useFetch } from '../../utils/hooks/useFetch';
+import { YoutubeService } from '../../utils/YoutubeService';
+import { DEVENV } from '../../config';
+import { VideosContext } from '../../providers/Videos/Videos.provider';
 
 function HomePage() {
+  const { search } = useContext(VideosContext);
   const sectionRef = useRef(null);
-  const videos = useFetch();
-
+  const service = DEVENV ? YoutubeService.devSearch : YoutubeService.search;
+  const { data, loading } = useFetch(service, search);
   return (
+    <>
     <section className="homepage" ref={sectionRef}>
-      <VideosLayout videos={videos}/>
+      {
+        loading ? 
+          <LinearProgress color="primary"/>
+        : 
+          <VideosLayout videos={data} direction={"row"}/> 
+      }
     </section>
+    </>
   );
 }
 export default HomePage;

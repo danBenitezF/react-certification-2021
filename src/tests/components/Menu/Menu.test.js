@@ -1,6 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { Menu } from '../../../components/Menu/Menu.component';
+import { listMenu } from '../../../components/Menu/menuConfig';
+import { MemoryRouter } from 'react-router';
 
 describe('Menu', () => {
     test('should render correctly', () => {
@@ -8,11 +10,16 @@ describe('Menu', () => {
         const wrapper = shallow(<Menu isOpen={false} setIsOpen={setIsOpen} /> );
         expect(wrapper).toMatchSnapshot();
     });
-
-    test('setIsOpen should be called at least once ', () => {
-        let isOpen = false;
+    
+    test('should contain list', () => {
         const setIsOpen = jest.fn();
-        const wrapper = shallow(<Menu isOpen={isOpen} setIsOpen={setIsOpen} /> );
-    })
+        const wrapper = mount(
+            <MemoryRouter>
+                <Menu isOpen={true} setIsOpen={setIsOpen} /> 
+            </MemoryRouter>
+        );
+        const listItems = wrapper.find('MenuItem');
+        expect(listItems.length).toBe(listMenu.length);
+    });
     
 });

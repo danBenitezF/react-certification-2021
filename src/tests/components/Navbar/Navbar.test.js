@@ -1,9 +1,8 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Navbar from '../../../components/Navbar/Navbar.component';
-import { SectionMobile } from '../../../components/Navbar/SectionMobile/SectionMobile.component';
-import { SectionDesktop } from '../../../components/Navbar/SectionDesktop/SectionDesktop.component';
-import { NavbarSearch } from '../../../components/Navbar/NavbarSearch/NavbarSearch.component';
+import { MemoryRouter } from 'react-router-dom';
+import { VideosContext } from '../../../providers/Videos/Videos.provider';
 
 describe('Navabar', () => {
     test(`should render correctly`, () => { 
@@ -18,12 +17,22 @@ describe('Navabar', () => {
         expect(appbar.exists()).toBe(true);
     });
     
-    test(`should contain an 'NavbarSearch', 'SectionDesktop' and 'SectionMobile` , () => {
-        const navbarSearch = shallow(<NavbarSearch/>);
-        const sectionDesktop = shallow(<SectionDesktop/>);
-        const sectionMobile = shallow(<SectionMobile/>);
-
-        const components = navbarSearch.exists() && sectionDesktop.exists() && sectionMobile.exists();
+    test(`should contain a 'NavbarSearch', 'SectionDesktop' and 'SectionMobile` , () => {
+        const wrapper = mount(
+            <VideosContext.Provider 
+                value = {{
+                    setSearch: jest.fn(),
+                }}
+            >
+                <MemoryRouter initialEntries={["/"]}>
+                    <Navbar/>
+                </MemoryRouter>
+            </VideosContext.Provider>
+        );
+        const navbarSearch = wrapper.find('NavbarSearch').exists();
+        const sectionDesktop = wrapper.find('SectionDesktop').exists();
+        const sectionMobile = wrapper.find('SectionMobile').exists();
+        const components = navbarSearch && sectionDesktop && sectionMobile;
         expect(components).toBe(true);
         
     });

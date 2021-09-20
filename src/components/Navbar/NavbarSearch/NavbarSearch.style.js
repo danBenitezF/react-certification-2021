@@ -30,6 +30,7 @@ export const navStyles = makeStyles((theme) => ({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      cursor: 'pointer',
     },
     inputRoot: {
       color: 'inherit',
